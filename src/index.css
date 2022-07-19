@@ -1,13 +1,102 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --color-orange: #ff5300;
+  --color-orange-v2: #fff7f4;
+  --color-black: #373737;
+  --color-dark: #18191a;
+  --color-dark-v1: #242526;
+  --color-dark-v2: #3a3b3c;
+  --color-gray: #7b7b7b;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Text Color Utils Class */
+.text-orange {
+  color: var(--color-orange);
+}
+
+.text-orange-v2 {
+  color: var(--color-orange-v2);
+}
+
+.text-black {
+  color: var(--color-black);
+}
+
+.text-dark {
+  color: var(--color-dark);
+}
+
+.text-dark-v1 {
+  color: var(--color-dark-v1);
+}
+
+.text-dark-v2 {
+  color: var(--color-dark-v2);
+}
+
+.text-gray {
+  color: var(--color-gray);
+}
+
+/* Background Color Utils Class */
+.bg-orange {
+  background-color: var(--color-orange);
+}
+
+.bg-orange-v2 {
+  background-color: var(--color-orange-v2);
+}
+
+.bg-black {
+  background-color: var(--color-black);
+}
+
+.bg-dark {
+  background-color: var(--color-dark);
+}
+
+.bg-dark-v1 {
+  background-color: var(--color-dark-v1);
+}
+
+.bg-dark-v2 {
+  background-color: var(--color-dark-v2);
+}
+
+.bg-gray {
+  background-color: var(--color-gray);
+}
+
+/* Border Color Utils Class */
+.border-orange {
+  border-color: var(--color-orange);
+}
+
+.border-orange-v2 {
+  border-color: var(--color-orange-v2);
+}
+
+.border-black {
+  border-color: var(--color-black);
+}
+
+.border-dark {
+  border-color: var(--color-dark);
+}
+
+.border-dark-v1 {
+  border-color: var(--color-dark-v1);
+}
+
+.border-dark-v2 {
+  border-color: var(--color-dark-v2);
+}
+
+.border-gray {
+  border-color: var(--color-gray);
 }
