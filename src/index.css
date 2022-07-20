@@ -2,6 +2,7 @@
 @import './styles/color-utils.css';
 @import './styles/bg-utils.css';
 @import './styles/border-utils.css';
+@import './styles/utils.css';
 
 * {
   padding: 0;

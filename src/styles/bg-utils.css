@@ -26,3 +26,7 @@
 .bg-gray {
   background-color: var(--color-gray);
 }
+
+.bg-white {
+  background-color: var(--color-white);
+}

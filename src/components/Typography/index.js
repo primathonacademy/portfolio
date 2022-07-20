@@ -2,7 +2,7 @@ import './style.css';
 
 const Typography = (props) => {
   const getClassNames = (tagClass) => {
-    return `${tagClass} ${props.className}`;
+    return `${tagClass} ${props.className ? props.className : ''}`;
   };
 
   const getTypography = () => {

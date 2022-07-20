@@ -1,0 +1,6 @@
+.app-primary-button {
+  padding: 12px 20px;
+  border: none;
+  filter: drop-shadow(4px 5px 15px rgba(255, 83, 0, 0.4));
+  border-radius: 8px;
+}

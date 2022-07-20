@@ -26,3 +26,7 @@
 .text-gray {
   color: var(--color-gray);
 }
+
+.text-white {
+  color: var(--color-white);
+}
