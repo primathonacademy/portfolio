@@ -1,0 +1,28 @@
+.app-nav {
+  flex: 1;
+  max-width: 526px;
+  display: none;
+}
+
+.app-nav ul {
+  list-style: none;
+  display: flex;
+}
+
+.app-nav .menu-font {
+  font-weight: 400;
+  line-height: 150.6%;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .app-nav {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .app-nav {
+    max-width: 700px;
+  }
+}

@@ -1,0 +1,28 @@
+.app-desktop-nav {
+  flex: 1;
+  max-width: 526px;
+  display: none;
+}
+
+.app-desktop-nav ul {
+  list-style: none;
+  display: flex;
+}
+
+.app-desktop-nav .menu-font {
+  font-weight: 400;
+  line-height: 150.6%;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .app-desktop-nav {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .app-desktop-nav {
+    max-width: 700px;
+  }
+}
