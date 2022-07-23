@@ -28,7 +28,7 @@ const Header = () => {
           />
         </div>
 
-        <DesktopNavbar />
+        <DesktopNavbar className='desktop-nav' />
 
         <div>
           <AppImage

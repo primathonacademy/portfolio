@@ -1,7 +1,7 @@
 import AppImage from '../AppImage';
 import Typography from '../Typography';
 import PrimaryButton from '../PrimaryButton';
-import IconButton from '../IconButton';
+import PosterSocialLinks from '../PosterSocialLinks';
 
 import './style.css';
 
@@ -14,28 +14,6 @@ const Poster = () => {
           alt='Logo'
           className='poster-image-tag'
         />
-
-        <div className='poster-social-icons'>
-          <IconButton
-            src={`${process.env.PUBLIC_URL}/assets/svgs/facebook-fill.svg`}
-            className='bg-orange'
-          />
-
-          <IconButton
-            src={`${process.env.PUBLIC_URL}/assets/svgs/instagram-fill.svg`}
-            className='bg-white'
-          />
-
-          <IconButton
-            src={`${process.env.PUBLIC_URL}/assets/svgs/twitter-fill.svg`}
-            className='bg-white'
-          />
-
-          <IconButton
-            src={`${process.env.PUBLIC_URL}/assets/svgs/skype-fill.svg`}
-            className='bg-white'
-          />
-        </div>
       </div>
       <div className='poster-text'>
         <Typography type='H1' className='text-dark poster-title'>
@@ -50,6 +28,8 @@ const Poster = () => {
 
         <PrimaryButton>Contact Us</PrimaryButton>
       </div>
+
+      <PosterSocialLinks className='poster-social-icons' />
     </section>
   );
 };

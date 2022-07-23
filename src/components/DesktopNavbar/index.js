@@ -2,9 +2,12 @@ import Typography from '../Typography';
 
 import './style.css';
 
-const DesktopNavbar = () => {
+const DesktopNavbar = (props) => {
+  const getClassNames = () =>
+    `app-desktop-nav ${props.className ? props.className : ''}`;
+
   return (
-    <nav className='app-desktop-nav'>
+    <nav className={getClassNames()}>
       <ul>
         <li>
           <Typography type='H5' className='menu-font text-black'>
