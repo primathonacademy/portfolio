@@ -7,7 +7,6 @@ import OurWork from '../../components/OurWork';
 import ClientsFeedback from '../../components/ClientsFeedback';
 import OurBlog from '../../components/OurBlog';
 import Footer from '../../components/Footer';
-import BasicForm from '../BasicForm';
 
 import './style.css';
 

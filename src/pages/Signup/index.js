@@ -1,9 +1,11 @@
 import React from 'react';
 import { Formik } from 'formik';
+import { Link } from 'react-router-dom';
+
 import './style.css';
 
 import { registerUser } from '../../apis';
-import { setData } from '../../services/storage';
+import { setStorageData, USER_DATA } from '../../services/storage';
 
 const Signup = () => {
   const initialValues = {
@@ -50,7 +52,7 @@ const Signup = () => {
       alert('Registration failed');
     }
 
-    setData('USER_DATA', response.data);
+    setStorageData(USER_DATA, response.data);
     setSubmitting(false);
   };
 
@@ -64,6 +66,8 @@ const Signup = () => {
       >
         {MyForm}
       </Formik>
+
+      <Link to='/login'>Already registered? Login</Link>
     </div>
   );
 };

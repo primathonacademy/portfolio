@@ -1,0 +1,37 @@
+.title {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.formControl {
+  display: block;
+  margin-top: 16px;
+}
+
+.input,
+.label,
+.error {
+  display: block;
+  width: 100%;
+}
+
+.input {
+  padding: 8px 12px;
+  margin-bottom: 4px;
+  margin-top: 2px;
+}
+
+.label {
+  font-size: 14px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.button {
+  padding: 8px 12px;
+  width: 100%;
+  margin-top: 30px;
+}

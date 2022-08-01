@@ -1,17 +1,48 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import ProtectedRoute from '../ProtectedRoute';
 import Homepage from '../Homepage';
 import Signup from '../Signup';
+import Login from '../Login';
 
-import styles from './style.module.css';
+import { getStorageData, USER_DATA } from '../../services/storage';
 
 const App = () => {
-  return (
-    <>
-      <h1 className={styles['my-h1']}>App Anywhere in your app!</h1>
+  const isAlreadyLogin = !!getStorageData(USER_DATA);
 
-      <Signup />
-      {/* <BasicForm /> */}
-      {/* <Homepage /> */}
-    </>
+  return (
+    <Router>
+      <Routes>
+        <Route
+          path='login'
+          element={
+            // <ProtectedRoute redirectPath='/' isAllowed={!isAlreadyLogin}>
+            <Login />
+            // </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path='signup'
+          element={
+            // <ProtectedRoute redirectPath='/' isAllowed={!isAlreadyLogin}>
+            <Signup />
+            // </ProtectedRoute>
+          }
+        />
+
+        <Route
+          index
+          element={
+            // <ProtectedRoute redirectPath='/login' isAllowed={isAlreadyLogin}>
+            <Homepage />
+            // </ProtectedRoute>
+          }
+        />
+
+        <Route path='*' element={<p>There's nothing here: 404!</p>} />
+      </Routes>
+    </Router>
   );
 };
 
