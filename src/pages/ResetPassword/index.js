@@ -1,26 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik } from 'formik';
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 
-import styles from './style.module.css';
+import styles from '../Login/style.module.css';
 
-import { loginUser } from '../../apis';
-import { setStorageData, USER_DATA } from '../../services/storage';
+import { resetUserPassword } from '../../apis';
 import Typography from '../../components/Typography';
 import { toastSuccess, toastError } from '../../services/toastify';
 
-const Login = () => {
-  let navigate = useNavigate();
-
-  const gotoHome = () => {
-    // navigate('/hello');
-    navigate({ pathname: '/' });
-  };
+const ResetPassword = () => {
+  const [password, setPassword] = useState();
 
   const initialValues = {
     email: '',
-    password: '',
   };
 
   const validator = (values) => {
@@ -28,40 +20,30 @@ const Login = () => {
 
     // email validation
     if (!values.email) {
-      errors.email = 'Required';
-    } else if (values.email.length < 4) {
-      errors.email = 'This is my own error';
+      errors.email = 'Please enter email';
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-      errors.email = 'Invalid email address';
+      errors.email = 'Please enter a valid email';
     }
-
-    // password validation
-    if (!values.password) {
-      errors.password = 'Please enter a valid password';
-    }
-
     return errors;
   };
 
   const onSubmit = async (values, { setSubmitting }) => {
-    // http://localhost:8080/api/v1/login
-    // http://localhost:8080/api/v2/login
-    const response = await loginUser(values);
+    const response = await resetUserPassword(values);
     if (!response.status.error) {
       toastSuccess(response.status.message);
-      setStorageData(USER_DATA, response.data);
-      // Got to homepage
-      gotoHome();
+      // Update State Variable
+      setPassword(response.data.password);
     } else {
       toastError(response.status.message);
     }
+
     setSubmitting(false);
   };
 
   return (
     <div className={styles.form}>
       <Typography className={styles.title} type='H2'>
-        Login
+        Reset Password
       </Typography>
       <Formik
         initialValues={initialValues}
@@ -71,8 +53,12 @@ const Login = () => {
         {MyForm}
       </Formik>
 
+      {password ? (
+        <div className={styles.pageLink}>Your Password : {password}</div>
+      ) : null}
+
       <div className={styles.pageLink}>
-        Not registered? <Link to='/signup'>click here</Link>
+        Already registered? <Link to='/login'>click here</Link>
       </div>
     </div>
   );
@@ -110,28 +96,6 @@ const MyForm = (props) => {
         ) : null}
       </div>
 
-      <div className={styles.formControl}>
-        <label>
-          <span className={styles.label}>Enter your password</span>
-          <input
-            type='password'
-            name='password'
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.password}
-            placeholder='Password'
-            className={styles.input}
-          />
-        </label>
-        {errors.password && touched.password ? (
-          <span className={styles.error}>{errors.password}</span>
-        ) : null}
-      </div>
-
-      <div className={styles.resetLink}>
-        Forgot password? <Link to='/reset-password'>click here</Link>
-      </div>
-
       <button type='submit' disabled={isSubmitting} className={styles.button}>
         Submit
       </button>
@@ -139,4 +103,4 @@ const MyForm = (props) => {
   );
 };
 
-export default Login;
+export default ResetPassword;

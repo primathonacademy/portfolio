@@ -1,48 +1,33 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-import ProtectedRoute from '../ProtectedRoute';
 import Homepage from '../Homepage';
 import Signup from '../Signup';
 import Login from '../Login';
-
-import { getStorageData, USER_DATA } from '../../services/storage';
+import ResetPassword from '../ResetPassword';
 
 const App = () => {
-  const isAlreadyLogin = !!getStorageData(USER_DATA);
-
   return (
-    <Router>
-      <Routes>
-        <Route
-          path='login'
-          element={
-            // <ProtectedRoute redirectPath='/' isAllowed={!isAlreadyLogin}>
-            <Login />
-            // </ProtectedRoute>
-          }
-        />
+    <>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Homepage />} />
 
-        <Route
-          path='signup'
-          element={
-            // <ProtectedRoute redirectPath='/' isAllowed={!isAlreadyLogin}>
-            <Signup />
-            // </ProtectedRoute>
-          }
-        />
+          <Route path='signup' element={<Signup />} />
 
-        <Route
-          index
-          element={
-            // <ProtectedRoute redirectPath='/login' isAllowed={isAlreadyLogin}>
-            <Homepage />
-            // </ProtectedRoute>
-          }
-        />
+          <Route path='login' element={<Login />} />
 
-        <Route path='*' element={<p>There's nothing here: 404!</p>} />
-      </Routes>
-    </Router>
+          <Route path='reset-password' element={<ResetPassword />} />
+
+          <Route path='hello' element={<h2>Hi - Hello </h2>} />
+
+          <Route path='*' element={<p>There's nothing here: 404!</p>} />
+        </Routes>
+      </Router>
+
+      <ToastContainer />
+    </>
   );
 };
 

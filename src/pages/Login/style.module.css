@@ -1,6 +1,23 @@
+.form {
+  padding: 32px;
+  border: 1px solid #999999;
+  margin: 8% auto;
+  max-width: 500px;
+}
+
 .title {
   margin-bottom: 50px;
   text-align: center;
+}
+
+.pageLink {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.resetLink {
+  margin-top: 12px;
+  color: red;
 }
 
 .formControl {

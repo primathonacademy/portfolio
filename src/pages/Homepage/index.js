@@ -1,3 +1,6 @@
+import { useNavigate } from 'react-router-dom';
+
+import { removeStorageData, USER_DATA } from '../../services/storage';
 import AboutUs from '../../components/AboutUs';
 import Header from '../../components/Header';
 import Poster from '../../components/Poster';
@@ -10,10 +13,17 @@ import Footer from '../../components/Footer';
 
 import './style.css';
 
-const App = () => {
+const Homepage = () => {
+  let navigate = useNavigate();
+
+  const onLogout = () => {
+    removeStorageData(USER_DATA);
+    navigate('/login');
+  };
+
   return (
     <div className='homepage'>
-      <Header />
+      <Header onLogout={onLogout} />
       <Poster />
       <AboutUs />
       <OurExperience />
@@ -26,4 +36,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Homepage;

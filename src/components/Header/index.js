@@ -7,7 +7,7 @@ import MobileNavbar from '../MobileNavbar';
 
 import './style.css';
 
-const Header = () => {
+const Header = (props) => {
   const [modalIsOpen, setIsOpen] = useState(false);
 
   const onOpenModal = () => {
@@ -30,10 +30,10 @@ const Header = () => {
 
         <DesktopNavbar className='desktop-nav' />
 
-        <div>
+        <div className='logout' onClick={props.onLogout}>
           <AppImage
-            src={`${process.env.PUBLIC_URL}/assets/svgs/light.svg`}
-            alt='Light'
+            src={`${process.env.PUBLIC_URL}/assets/images/logout.png`}
+            alt='Logout'
           />
         </div>
 
@@ -58,10 +58,10 @@ const Header = () => {
             />
           </div>
 
-          <div>
+          <div className='logout' onClick={props.onLogout}>
             <AppImage
-              src={`${process.env.PUBLIC_URL}/assets/svgs/light.svg`}
-              alt='Light'
+              src={`${process.env.PUBLIC_URL}/assets/images/logout.png`}
+              alt='Logout'
             />
           </div>
 

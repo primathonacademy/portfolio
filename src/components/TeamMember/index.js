@@ -5,21 +5,25 @@ import './style.css';
 
 const CARD_DATA = [
   {
+    id: 1,
     src: 'https://picsum.photos/271/250',
     name: 'Gustavo Herwitz',
     domain: 'UI/UX Designer',
   },
   {
+    id: 2,
     src: 'https://picsum.photos/270/250',
     name: 'Gustavo Wrtgs',
     domain: 'Product Designer',
   },
   {
+    id: 3,
     src: 'https://picsum.photos/271/251',
     name: 'Detiour Herwitz',
     domain: 'Backend Designer',
   },
   {
+    id: 4,
     src: 'https://picsum.photos/270/251',
     name: 'Htruit Herwitz',
     domain: 'Test Designer',
@@ -40,6 +44,7 @@ const TeamMember = () => {
       <div className='card-holder'>
         {CARD_DATA.map((member, i) => (
           <PeopleCard
+            key={member.id}
             src={member.src}
             name={member.name}
             domain={member.domain}

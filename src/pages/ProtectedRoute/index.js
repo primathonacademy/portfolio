@@ -1,11 +1,14 @@
 import { Navigate, Outlet } from 'react-router-dom';
+import { getStorageData, USER_DATA } from '../../services/storage';
 
 const ProtectedRoute = (props) => {
-  if (!props.isAllowed) {
-    return <Navigate to={props.redirectPath} replace />;
+  const isAlreadyLogin = !!getStorageData(USER_DATA);
+
+  if (isAlreadyLogin && false) {
+    return <Navigate to={props.redirectPath} />;
   }
 
-  return props.children ? props.children : <Outlet />;
+  return props.children ? props.children : null;
 };
 
 export default ProtectedRoute;

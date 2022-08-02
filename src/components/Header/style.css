@@ -15,6 +15,11 @@
   display: none;
 }
 
+.app-header .logout {
+  height: 1.5em;
+  cursor: pointer;
+}
+
 @media (min-width: 768px) {
   .app-header {
     padding: 28px 40px;
