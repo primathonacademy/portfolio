@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Typography from '../Typography';
 
 import './style.css';
@@ -10,39 +11,51 @@ const DesktopNavbar = (props) => {
     <nav className={getClassNames()}>
       <ul>
         <li>
-          <Typography type='H5' className='menu-font text-black'>
-            Home
-          </Typography>
+          <Link to='/'>
+            <Typography type='H5' className='menu-font text-black'>
+              Home
+            </Typography>
+          </Link>
         </li>
 
         <li>
-          <Typography type='H5' className='menu-font text-black'>
-            About Us
-          </Typography>
+          <Link to='/about'>
+            <Typography type='H5' className='menu-font text-black'>
+              About Us
+            </Typography>
+          </Link>
         </li>
 
         <li>
-          <Typography type='H5' className='menu-font text-black'>
-            Our Work
-          </Typography>
+          <Link to='/our-work'>
+            <Typography type='H5' className='menu-font text-black'>
+              Our Work
+            </Typography>
+          </Link>
         </li>
 
         <li>
-          <Typography type='H5' className='menu-font text-black'>
-            Clients
-          </Typography>
+          <Link to='/clients'>
+            <Typography type='H5' className='menu-font text-black'>
+              Clients
+            </Typography>
+          </Link>
         </li>
 
         <li>
-          <Typography type='H5' className='menu-font text-black'>
-            Our Blog
-          </Typography>
+          <Link to='/our-blog'>
+            <Typography type='H5' className='menu-font text-black'>
+              Our Blog
+            </Typography>
+          </Link>
         </li>
 
         <li>
-          <Typography type='H5' className='menu-font text-black'>
-            Contact Us
-          </Typography>
+          <Link to='/contact-us'>
+            <Typography type='H5' className='menu-font text-black'>
+              Contact Us
+            </Typography>
+          </Link>
         </li>
       </ul>
     </nav>

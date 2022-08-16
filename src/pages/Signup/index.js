@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Formik } from 'formik';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
@@ -12,6 +12,10 @@ import { toastSuccess, toastError } from '../../services/toastify';
 
 const Signup = () => {
   let navigate = useNavigate();
+
+  useEffect(() => {
+    console.log('Hey, I am Signup');
+  }, []);
 
   const gotoHome = () => {
     navigate('/');

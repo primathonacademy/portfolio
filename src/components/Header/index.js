@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import AppImage from '../AppImage';
 import AppModal from '../AppModal';
@@ -22,10 +23,12 @@ const Header = (props) => {
     <>
       <header className='app-header'>
         <div>
-          <AppImage
-            src={`${process.env.PUBLIC_URL}/assets/images/logo.png`}
-            alt='Logo'
-          />
+          <Link to='/'>
+            <AppImage
+              src={`${process.env.PUBLIC_URL}/assets/images/logo.png`}
+              alt='Logo'
+            />
+          </Link>
         </div>
 
         <DesktopNavbar className='desktop-nav' />

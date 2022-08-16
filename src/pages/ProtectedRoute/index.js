@@ -1,14 +1,19 @@
-import { Navigate, Outlet } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { getStorageData, USER_DATA } from '../../services/storage';
 
 const ProtectedRoute = (props) => {
-  const isAlreadyLogin = !!getStorageData(USER_DATA);
+  const navigate = useNavigate();
 
-  if (isAlreadyLogin && false) {
-    return <Navigate to={props.redirectPath} />;
-  }
+  useEffect(() => {
+    const user = getStorageData(USER_DATA);
+    console.log('Protected: ', user);
+    if (!user) {
+      navigate('/login');
+    }
+  }, []);
 
-  return props.children ? props.children : null;
+  return props.children;
 };
 
 export default ProtectedRoute;
