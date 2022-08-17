@@ -110,6 +110,11 @@ const App = () => {
             }
           />
 
+          {/* 
+            our-blog/a
+            our-blog/blog
+            our-blog/asdfgh 
+          */}
           <Route
             path='our-blog/:blogId'
             element={

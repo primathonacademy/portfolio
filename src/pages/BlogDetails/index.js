@@ -18,6 +18,7 @@ const BlogDetails = () => {
         <div className={styles['blog-content']}>
           <summary>
             <h3>Blog Post - {params.blogId}</h3>
+            {/* <h3>Blog Post</h3> */}
             <div className={styles['blog-date']}>23 Dec 2016</div>
           </summary>
           <p>
