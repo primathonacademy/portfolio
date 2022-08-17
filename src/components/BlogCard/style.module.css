@@ -1,0 +1,42 @@
+.card {
+  border-radius: 10px;
+  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+
+.h3 {
+  margin: 0 0 8px 0;
+  color: #999;
+  font-size: 12px;
+}
+
+.h2 {
+  margin: 0 0 1rem 0;
+  letter-spacing: 0.5px;
+  color: #333;
+}
+
+.p {
+  margin: 0 0 20px 0;
+  line-height: 1.45;
+  color: #333;
+}
+
+.btn_primary {
+  cursor: pointer;
+  display: inline-block;
+  border: none;
+  outline: none;
+  background: linear-gradient(90deg, #ff9966, #ff5e62);
+  padding: 12px 16px;
+  border-radius: 50px;
+  color: white;
+  box-shadow: 1px 10px 20px rgba(255, 94, 98, 0.5);
+  transition: all 0.2s ease-in;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.btn_primary:hover {
+  box-shadow: 0px 5px 1rem rgba(255, 94, 98, 0.5);
+}

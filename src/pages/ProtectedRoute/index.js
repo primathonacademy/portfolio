@@ -8,8 +8,14 @@ const ProtectedRoute = (props) => {
   useEffect(() => {
     const user = getStorageData(USER_DATA);
     console.log('Protected: ', user);
-    if (!user) {
-      navigate('/login');
+    if (props.isPublicRoute) {
+      if (!!user) {
+        navigate('/');
+      }
+    } else {
+      if (!user) {
+        navigate('/login');
+      }
     }
   }, []);
 

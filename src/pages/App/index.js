@@ -12,6 +12,7 @@ import OurWork from '../OurWork';
 import OurBlog from '../OurBlog';
 import Clients from '../Clients';
 import ContactUs from '../ContactUs';
+import BlogDetails from '../BlogDetails';
 
 import A from '../A';
 import B from '../B';
@@ -22,11 +23,32 @@ const App = () => {
       <Router>
         <Routes>
           {/* Public Route */}
-          <Route path='signup' element={<Signup />} />
+          <Route
+            path='signup'
+            element={
+              <ProtectedRoute isPublicRoute={true}>
+                <Signup />
+              </ProtectedRoute>
+            }
+          />
 
-          <Route path='login' element={<Login />} />
+          <Route
+            path='login'
+            element={
+              <ProtectedRoute isPublicRoute={true}>
+                <Login />
+              </ProtectedRoute>
+            }
+          />
 
-          <Route path='reset-password' element={<ResetPassword />} />
+          <Route
+            path='reset-password'
+            element={
+              <ProtectedRoute isPublicRoute={true}>
+                <ResetPassword />
+              </ProtectedRoute>
+            }
+          />
 
           {/* Protected Route */}
 
@@ -84,6 +106,15 @@ const App = () => {
             element={
               <ProtectedRoute>
                 <Clients />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path='our-blog/:blogId'
+            element={
+              <ProtectedRoute>
+                <BlogDetails />
               </ProtectedRoute>
             }
           />
