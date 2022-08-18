@@ -13,6 +13,7 @@ import OurBlog from '../OurBlog';
 import Clients from '../Clients';
 import ContactUs from '../ContactUs';
 import BlogDetails from '../BlogDetails';
+import Animation from '../Animation';
 
 import A from '../A';
 import B from '../B';
@@ -115,6 +116,16 @@ const App = () => {
             our-blog/blog
             our-blog/asdfgh 
           */}
+
+          <Route
+            path='our-blog/animation'
+            element={
+              <ProtectedRoute>
+                <Animation />
+              </ProtectedRoute>
+            }
+          />
+
           <Route
             path='our-blog/:blogId'
             element={

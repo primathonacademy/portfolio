@@ -1,0 +1,33 @@
+{
+    "/": {
+        "get": {
+            "data": [
+                {"id":1,"name": "GET"}
+            ]
+        },
+
+        "post": {
+            "data": [
+                {"id":1,"name": "POST"}
+            ]
+        },
+
+        "put": {
+            "data": [
+                {"id":1,"name": "PUT"}
+            ]
+        },
+
+        "patch": {
+            "data": [
+                {"id":1,"name": "PATCH"}
+            ]
+        },
+
+        "delete": {
+            "data": [
+                {"id":1,"name": "DELETE"}
+            ]
+        }
+    }
+}

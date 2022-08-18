@@ -1,5 +1,11 @@
 const BLOG_DATA = [
   {
+    id: 'animation',
+    date: '18 August 2022',
+    title: 'React Animation',
+  },
+
+  {
     id: 1,
     date: '17 August 2022',
     title: 'CSS Positioning 1',
