@@ -13,6 +13,7 @@ import OurBlog from '../OurBlog';
 import Clients from '../Clients';
 import ContactUs from '../ContactUs';
 import BlogDetails from '../BlogDetails';
+// import Animation from '../Animation/Animations';
 import Animation from '../Animation';
 
 import A from '../A';

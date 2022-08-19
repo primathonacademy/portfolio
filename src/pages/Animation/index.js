@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useReducer } from 'react';
 
 const TEXT = ['Freelancer', 'UX Designer', 'Web Developer', 'Web Designer'];
 
 const Animation = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [slicedIndex, setSlicedIndex] = useState(0);
+
+  // const [state, dispatch] = useReducer(() => {}, 0);
 
   let isForward = true;
 
@@ -26,6 +28,8 @@ const Animation = () => {
 
           // active index should be changed
           shouldUpdateActiveIndex = true;
+          // // debugger;
+          // setActiveIndex((prev) => (prev + 1) % TEXT.length);
 
           // set slice index to start=0
           return 0;
@@ -55,6 +59,8 @@ const Animation = () => {
         marginTop: '200px',
       }}
     >
+      {TEXT[activeIndex]}
+      <br />
       {TEXT[activeIndex].slice(0, slicedIndex)}
     </h1>
   );
